@@ -378,8 +378,15 @@
 					else codeInputElement.focus();
 					return;
 				}
-				console.log(body);
-				// modalLoading.style.display = 'flex';
+				modalLoading.style.display = 'flex';
+				setTimeout(() => {
+					modalLoading.style.display = 'none';
+					alert(
+						`Thông tin gửi\nEmail sinh viên: ${emailInputElement?.value}\nMã sinh viên: ${codeInputElement?.value}\nCảm ơn Quý Khách đã tin tưởng và sử dụng dịch vụ của chúng tôi`,
+					);
+					emailInputElement.value = '';
+					codeInputElement.value = '';
+				}, 3000);
 				// await fetchAPI({
 				// 	url: 'http://swapwifi6.cpe-lab.com/portal-inf/portal-cpe/swap-ip-customer-invite',
 				// 	body: body,
