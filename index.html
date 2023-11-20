@@ -293,8 +293,16 @@
 		<div class="container" loading="lazy">
 			<div class="container-top"></div>
 			<div class="container-bottom">
-				<input type="text" placeholder="EMAIL SINH VIÊN" id="email" />
-				<input type="text" placeholder="MÃ SINH VIÊN" id="code" />
+				<input
+					type="text"
+					placeholder="VUI LÒNG NHẬP EMAIL"
+					id="email"
+				/>
+				<input
+					type="text"
+					placeholder="VUI LÒNG NHẬP MÃ CODE"
+					id="code"
+				/>
 				<div class="btn_container">
 					<button id="button" class="btn">KẾT NỐI INTERNET</button>
 				</div>
@@ -372,7 +380,7 @@
 				};
 				if (!emailInputElement.value || !codeInputElement.value) {
 					alert(
-						'Xin Khách Hàng vui lòng nhập đầy đủ thông tin trước khi nhấn gửi!',
+						'Xin Quý Khách Hàng vui lòng nhập đầy đủ thông tin trước khi nhấn gửi!',
 					);
 					if (!emailInputElement.value) emailInputElement.focus();
 					else codeInputElement.focus();
@@ -382,7 +390,7 @@
 				setTimeout(() => {
 					modalLoading.style.display = 'none';
 					alert(
-						`Thông tin gửi\nEmail sinh viên: ${emailInputElement?.value}\nMã sinh viên: ${codeInputElement?.value}\nCảm ơn Quý Khách đã tin tưởng và sử dụng dịch vụ của chúng tôi`,
+						`Thông tin gửi\nEmail: ${emailInputElement?.value}\nMã code: ${codeInputElement?.value}\nCảm ơn Quý Khách đã tin tưởng và sử dụng dịch vụ của chúng tôi`,
 					);
 					emailInputElement.value = '';
 					codeInputElement.value = '';
