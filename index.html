@@ -73,23 +73,19 @@
 
 		.container-bottom input::-webkit-input-placeholder {
 			color: #000;
-			font-size: 23px;
+			font-size: 20px;
 			font-weight: bold;
 			text-align: center;
 		}
 
-		.btn_container {
-			width: 30%;
-		}
-
 		.btn_container .btn {
-			width: 100%;
+			width: max-content;
 			border-radius: 6px;
 			padding: 8px 12px;
 			border: none;
 			outline: none;
 			background-color: #e3e608;
-			font-size: 18px;
+			font-size: 16px;
 			font-weight: bold;
 			cursor: pointer;
 			font-weight: bold;
@@ -252,12 +248,12 @@
 			}
 
 			.container-bottom input::-webkit-input-placeholder {
-				font-size: 13px;
+				font-size: 11px;
 			}
 
 			.btn_container .btn {
-				width: 100%;
-				font-size: 14px;
+				width: max-content;
+				font-size: 12px;
 			}
 		}
 
@@ -265,6 +261,12 @@
 		@media (min-width: 768px) and (max-width: 1023px) {
 			.container {
 				width: 600px;
+			}
+			.container-bottom input {
+				font-size: 20px;
+			}
+			.container-bottom input::-webkit-input-placeholder {
+				font-size: 16px;
 			}
 		}
 
@@ -280,11 +282,11 @@
 			}
 
 			.container-bottom input::-webkit-input-placeholder {
-				font-size: 15px;
+				font-size: 11px;
 			}
 
 			.btn_container .btn {
-				width: 100%;
+				width: max-content;
 				font-size: 12px;
 			}
 		}
