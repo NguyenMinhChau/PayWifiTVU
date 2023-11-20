@@ -60,7 +60,7 @@
 		}
 
 		.container-bottom input {
-			width: 80%;
+			width: 50%;
 			height: 50px;
 			border-radius: 6px;
 			border: none;
@@ -68,6 +68,7 @@
 			padding: 0 12px;
 			font-size: 26px;
 			box-sizing: border-box;
+			text-align: center;
 		}
 
 		.container-bottom input::-webkit-input-placeholder {
@@ -78,7 +79,7 @@
 		}
 
 		.btn_container {
-			width: 60%;
+			width: 30%;
 		}
 
 		.btn_container .btn {
@@ -87,8 +88,8 @@
 			padding: 8px 12px;
 			border: none;
 			outline: none;
-			background-color: #f8db6b;
-			font-size: 23px;
+			background-color: #e3e608;
+			font-size: 18px;
 			font-weight: bold;
 			cursor: pointer;
 			font-weight: bold;
@@ -256,7 +257,7 @@
 
 			.btn_container .btn {
 				width: 100%;
-				font-size: 15px;
+				font-size: 14px;
 			}
 		}
 
@@ -284,7 +285,7 @@
 
 			.btn_container .btn {
 				width: 100%;
-				font-size: 18px;
+				font-size: 12px;
 			}
 		}
 	</style>
@@ -302,6 +303,7 @@
 					type="text"
 					placeholder="VUI LÒNG NHẬP MÃ CODE"
 					id="code"
+					style="text-transform: uppercase"
 				/>
 				<div class="btn_container">
 					<button id="button" class="btn">KẾT NỐI INTERNET</button>
@@ -373,16 +375,18 @@
 			//! API submit
 			btnSubmitElement.addEventListener('click', async (e) => {
 				e.preventDefault();
+				const email = emailInputElement.value;
+				const code = codeInputElement.value.toUpperCase();
 				const body = {
 					userAgent: window.navigator.userAgent,
-					email: emailInputElement.value,
-					code: codeInputElement.value,
+					email: email,
+					code: code,
 				};
-				if (!emailInputElement.value || !codeInputElement.value) {
+				if (!email || !code) {
 					alert(
 						'Xin Quý Khách Hàng vui lòng nhập đầy đủ thông tin trước khi nhấn KẾT NỐI INTERNET!',
 					);
-					if (!emailInputElement.value) emailInputElement.focus();
+					if (!email) emailInputElement.focus();
 					else codeInputElement.focus();
 					return;
 				}
@@ -390,7 +394,7 @@
 				setTimeout(() => {
 					modalLoading.style.display = 'none';
 					alert(
-						`Thông tin gửi\nEmail: ${emailInputElement?.value}\nMã code: ${codeInputElement?.value}\nCảm ơn Quý Khách đã tin tưởng và sử dụng dịch vụ của chúng tôi`,
+						`Thông tin gửi\nEmail: ${email}\nMã code: ${code}\nCảm ơn Quý Khách đã tin tưởng và sử dụng dịch vụ của chúng tôi`,
 					);
 					emailInputElement.value = '';
 					codeInputElement.value = '';
